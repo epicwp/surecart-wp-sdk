@@ -1,0 +1,7 @@
+/*.json
+/test.*
+!composer.json
+!/tests
+/SureCart
+vendor
+surecart.http

@@ -1,0 +1,49 @@
+{
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/home/venom/projects/composer/xwp/updater",
+      "canonical": true,
+      "options": {
+        "versions": {
+          "x-wp/updater": "1.0.0"
+        },
+        "symlink": true
+      }
+    }
+  ],
+  "name": "surecart/wordpress-sdk",
+  "require": {
+    "surecart/client": "^1.0",
+    "x-wp/updater": "^1.0",
+    "x-wp/admin-notice-manager": "^1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": false,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "SureCart\\WP\\": "src/"
+    },
+    "classmap": [
+      "src/Data/"
+    ]
+  },
+  "minimum-stability": "alpha",
+  "prefer-stable": true,
+  "require-dev": {
+    "oblak/wordpress-coding-standard": "^1.1",
+    "php-stubs/wordpress-stubs": "^6.6",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^1.12",
+    "phpstan/phpstan-deprecation-rules": "^1.2",
+    "swissspidy/phpstan-no-private": "^0.2",
+    "symfony/var-dumper": "^5.4",
+    "szepeviktor/phpstan-wordpress": "^1.3",
+    "x-wp/di": "^2.0"
+  }
+}
