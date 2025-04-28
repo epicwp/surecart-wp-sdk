@@ -21,9 +21,23 @@ defined( 'ABSPATH' ) || exit;
     );
     ?>
 
-    <br>
-
+</p>
+<p>
     <?php
+
+    printf(
+        // Translators: %s is the license key.
+        esc_html__( 'License domain: %s', 'surecart' ),
+        esc_url( $license->get_аctivation_url() ),
+    );
+
+    if ( $license->is_local() ) {
+        esc_html_e( ' (staging)', 'surecart' );
+    }
+
+
+    echo '<br>';
+
     $expiry = $license->get_revokes_at()
         // Translators: %s is the expiry date of the license.
         ? sprintf( __( 'until %s.', 'surecart' ), date_i18n( 'F j, Y', $license['revokes_at'] ) )

@@ -230,8 +230,8 @@ class Settings_Service implements Handles_Settings {
     /**
      * Get the notice details.
      *
-     * @param  bool|\WP_Error          $res Result of the operation.
-     * @param  'activate'|'deactivate' $op  Operation type.
+     * @param  bool|\WP_Error $res Result of the operation.
+     * @param  string         $op  Operation type.
      * @return array<string,mixed>
      */
     private function get_notice( bool|\WP_Error $res, string $op ): array {
@@ -243,9 +243,11 @@ class Settings_Service implements Handles_Settings {
                 'type'    => 'error',
             ) : array(
                 'code'    => 'surecart',
-                'message' => 'activate' === $op
-                    ? \__( 'License activated successfully.', 'surecart' )
-                    : \__( 'License deactivated successfully.', 'surecart' ),
+                'message' => match ( $op ) {
+                    'activate'   => \__( 'License activated successfully.', 'surecart' ),
+                    'deactivate' => \__( 'License deactivated successfully.', 'surecart' ),
+                    default      => \__( 'License refreshed successfully.', 'surecart' ),
+                },
                 'setting' => 'surecart',
                 'type'    => 'success',
             );

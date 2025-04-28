@@ -3,6 +3,7 @@
 namespace SureCart\WP;
 
 use Psr\Container\ContainerInterface as Cnt;
+use SC_License;
 use SureCart\Client;
 use SureCart\WP\Interfaces\Handles_Releases;
 use XWP\DI\Container;
@@ -32,11 +33,12 @@ class Surecart_Module {
             Handles_Releases::class => \DI\factory(
                 static fn( SDK $sdk, Cnt $cnt ) => $cnt->get( $sdk->get_updater() ),
             ),
+            SC_License::class       => \DI\autowire()->constructor( data: \DI\get( 'surecart.id' ) ),
             SDK::class              => \DI\autowire()
                 ->constructorParameter(
                     'config',
                     \DI\factory( array( SDK_Loader::class, 'for_container' ) )
-                        ->parameter( 'args', \DI\get( 'app.surecart' ) ),
+                        ->parameter( 'args', \DI\get( 'surecart.config' ) ),
                 ),
         );
     }

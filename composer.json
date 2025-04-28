@@ -1,21 +1,8 @@
 {
-  "repositories": [
-    {
-      "type": "path",
-      "url": "/home/venom/projects/composer/xwp/updater",
-      "canonical": true,
-      "options": {
-        "versions": {
-          "x-wp/updater": "1.0.0"
-        },
-        "symlink": true
-      }
-    }
-  ],
   "name": "surecart/wordpress-sdk",
   "require": {
     "surecart/client": "^1.0",
-    "x-wp/updater": "^1.0",
+    "x-wp/updater": "^3.0",
     "x-wp/admin-notice-manager": "^1.0"
   },
   "config": {

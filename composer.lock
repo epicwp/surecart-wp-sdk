@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9dbdb30a1cb3b38f33c79c015a1a2ee",
+    "content-hash": "ef34dfe0b330eeb5c1b89e4f3079d8c4",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -560,16 +560,16 @@
         },
         {
             "name": "surecart/client",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/epicwp/surecart-client.git",
-                "reference": "91c66d627f4b7aaf023f980aadf1588ad07c9f64"
+                "reference": "578ee1ecc11a8cd8cab91f3324ca52f975c55d7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/epicwp/surecart-client/zipball/91c66d627f4b7aaf023f980aadf1588ad07c9f64",
-                "reference": "91c66d627f4b7aaf023f980aadf1588ad07c9f64",
+                "url": "https://api.github.com/repos/epicwp/surecart-client/zipball/578ee1ecc11a8cd8cab91f3324ca52f975c55d7b",
+                "reference": "578ee1ecc11a8cd8cab91f3324ca52f975c55d7b",
                 "shasum": ""
             },
             "require": {
@@ -624,9 +624,9 @@
             "support": {
                 "email": "helpdesk@epicwpsolutions.com",
                 "issues": "https://github.com/epicwp/surecart-client/issues",
-                "source": "https://github.com/epicwp/surecart-client/tree/v1.0.3"
+                "source": "https://github.com/epicwp/surecart-client/tree/v1.0.4"
             },
-            "time": "2025-04-24T14:32:51+00:00"
+            "time": "2025-04-28T17:55:57+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1081,11 +1081,17 @@
         },
         {
             "name": "x-wp/updater",
-            "version": "1.0.0",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x-wp/updater.git",
+                "reference": "0259b0369a4c6babf635b8c69a93a69d4361c12c"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/venom/projects/composer/xwp/updater",
-                "reference": "03331f0b54ff51817e5ffd0e208d0c0a197f9502"
+                "type": "zip",
+                "url": "https://api.github.com/repos/x-wp/updater/zipball/0259b0369a4c6babf635b8c69a93a69d4361c12c",
+                "reference": "0259b0369a4c6babf635b8c69a93a69d4361c12c",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.0",
@@ -1107,14 +1113,15 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "XWP\\Updater\\": "src/"
-                },
                 "files": [
                     "src/Functions/xwp-updater-bootstrap.php",
                     "src/Functions/xwp-updater-util-fns.php"
-                ]
+                ],
+                "psr-4": {
+                    "XWP\\Updater\\": "src/"
+                }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
@@ -1134,37 +1141,41 @@
                 "wordpress"
             ],
             "support": {
-                "issues": "https://github.com/oblakstudio/wp-package-updater/issues"
+                "issues": "https://github.com/oblakstudio/wp-package-updater/issues",
+                "source": "https://github.com/x-wp/updater/tree/v3.0.0"
             },
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "funding": [
+                {
+                    "url": "https://github.com/seebeen",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-04-28T18:01:48+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "automattic/jetpack-constants",
-            "version": "v3.0.7",
+            "version": "v3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/jetpack-constants.git",
-                "reference": "e27857a70170ba8cd76aa35e9781fbd8799a7d05"
+                "reference": "f9bf00ab48956b8326209e7c0baf247a0ed721c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-constants/zipball/e27857a70170ba8cd76aa35e9781fbd8799a7d05",
-                "reference": "e27857a70170ba8cd76aa35e9781fbd8799a7d05",
+                "url": "https://api.github.com/repos/Automattic/jetpack-constants/zipball/f9bf00ab48956b8326209e7c0baf247a0ed721c4",
+                "reference": "f9bf00ab48956b8326209e7c0baf247a0ed721c4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
             "require-dev": {
-                "automattic/jetpack-changelogger": "^6.0.4",
-                "automattic/phpunit-select-config": "^1.0.2",
+                "automattic/jetpack-changelogger": "^6.0.5",
+                "automattic/phpunit-select-config": "^1.0.3",
                 "brain/monkey": "^2.6.2",
-                "yoast/phpunit-polyfills": "^3.0.0"
+                "yoast/phpunit-polyfills": "^4.0.0"
             },
             "suggest": {
                 "automattic/jetpack-autoloader": "Allow for better interoperability with other plugins that use this package."
@@ -1191,9 +1202,9 @@
             ],
             "description": "A wrapper for defining constants in a more testable way.",
             "support": {
-                "source": "https://github.com/Automattic/jetpack-constants/tree/v3.0.7"
+                "source": "https://github.com/Automattic/jetpack-constants/tree/v3.0.8"
             },
-            "time": "2025-04-14T14:15:55+00:00"
+            "time": "2025-04-28T15:12:45+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",

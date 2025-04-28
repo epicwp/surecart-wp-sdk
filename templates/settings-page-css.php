@@ -33,8 +33,11 @@ defined( 'ABSPATH' ) || exit;
     label[hidden] {
         display: none;
     }
+    .surecart-container p {
+        margin: 0 0 10px;
+    }
     p.submit {
-        margin: 5px 0 0;
+        margin: 0 0 5px;
         padding: 0;
     }
     .button.delete {
