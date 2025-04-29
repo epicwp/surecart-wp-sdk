@@ -166,7 +166,7 @@ class SC_License extends SC_Data {
                     'usage_limit' => $license['activation_limit'],
                     'created_at'  => $license['created_at'],
                     'revokes_at'  => $license['revokes_at'],
-                    'status'      => $license['status'],
+                    'status'      => $license['status'] ?? 'active',
                     'registered'  => true,
                 ),
             ),
