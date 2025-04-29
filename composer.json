@@ -1,5 +1,6 @@
 {
   "name": "surecart/wordpress-sdk",
+  "license": "MIT",
   "require": {
     "surecart/client": "^1.0",
     "x-wp/updater": "^3.0",

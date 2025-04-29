@@ -44,7 +44,11 @@ defined( 'ABSPATH' ) || exit;
                 'surecart',
             ),
             esc_html( number_format_i18n( $license->get_usage_count() ) ),
-            esc_html( number_format_i18n( $license->get_usage_limit() ?: '∞' ) ),
+            esc_html(
+                $license->get_usage_limit()
+                    ? number_format_i18n( $license->get_usage_limit() )
+                    : '∞',
+            ),
         ),
     );
     ?>
