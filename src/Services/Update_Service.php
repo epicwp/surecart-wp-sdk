@@ -74,6 +74,12 @@ class Update_Service implements Handles_Releases {
             return false;
         }
 
-        return $release['release_json'];
+        return \array_merge(
+            $release['release_json'],
+            array(
+                'download_link' => $release['url'],
+                'package'       => $release['url'],
+            ),
+        );
     }
 }
