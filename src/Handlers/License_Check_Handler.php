@@ -63,6 +63,8 @@ class License_Check_Handler {
 
     /**
      * Run the license validation.
+     *
+     * @param  string $id License ID.
      */
     #[Action( tag: 'surecart_%s_license_validation', priority: 10, modifiers: array( 'surecart.id' ) )]
     public function run_license_validation( string $id ): void {
@@ -71,6 +73,7 @@ class License_Check_Handler {
         $res = $this->reg->validate( $license );
 
         if ( ! \is_wp_error( $res ) ) {
+            \xwp_delete_notice( $this->notice_id( $id ), true );
             return;
         }
 
@@ -93,7 +96,7 @@ class License_Check_Handler {
             array(
                 'caps'        => array( 'manage_options' ),
                 'dismissible' => false,
-                'id'          => "surecart_{$id}_license_invalid",
+                'id'          => $this->notice_id( $id ),
                 'message'     => \sprintf(
                     '<strong>%s</strong>: %s',
                     \esc_html( $this->sdk->get_name() ),
@@ -103,5 +106,15 @@ class License_Check_Handler {
                 'type'        => 'error',
             ),
         )->save();
+    }
+
+    /**
+     * Get the notice ID for the license check.
+     *
+     * @param  string $id License ID.
+     * @return string
+     */
+    private function notice_id( string $id ): string {
+        return \sprintf( 'surecart_%s_license_invalid', $id );
     }
 }
