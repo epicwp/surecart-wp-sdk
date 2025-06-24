@@ -40,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
 
     $expiry = $license->get_revokes_at()
         // Translators: %s is the expiry date of the license.
-        ? sprintf( __( 'until %s.', 'surecart' ), date_i18n( 'F j, Y', $license['revokes_at'] ) )
+        ? sprintf( __( 'until %s.', 'surecart' ), date_i18n( 'F j, Y', $license->get_revokes_at() ) )
         : __( 'until the end of time', 'surecart' );
 
     printf(
