@@ -83,7 +83,20 @@ class SC_License extends SC_Data {
         $id  = $post['id'] ?? null;
         $key = $post['license_key'] ?? '';
 
-        return ( new self( $id ) )->set_license_key( $key );
+        $license = new self( $id );
+        
+        // If new license key provided and differs from stored - RESET EVERYTHING
+        if ( $key !== '' && $license->get_license_key() !== $key ) {
+            
+            // Delete old license data from database
+            $license->delete();
+            
+            // Create fresh license with only the new key
+            $license = new self( $id );
+            $license->set_license_key( $key );
+        }
+        
+        return $license;
     }
 
     /**
